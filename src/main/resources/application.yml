@@ -1,0 +1,36 @@
+application:
+  srcDirPath: srcDirPath
+  msgThreshold: 100
+  mail:
+    host: smtp.some.com
+    port: 465
+    login: any@some.com
+    password: qweqwe
+    onHundredMailTo: my@mail.com
+
+camel:
+  springboot:
+    name: CamelSpringDemo
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./db/camelspringdemodb
+    driverClassName: org.h2.Driver
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+#      settings:
+#        trace: false
+#        web-allow-others: false
+
+logging.level:
+  root: debug
+  org.apache: info
+  org.springframework: error
+  org.example.camelspringdemo: debug
+
