@@ -11,6 +11,7 @@ application:
 camel:
   springboot:
     name: CamelSpringDemo
+    main-run-controller: true
 
 spring:
   datasource:
@@ -20,6 +21,7 @@ spring:
     password: root
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    database: h2
 #  h2:
 #    console:
 #      enabled: true
@@ -27,10 +29,31 @@ spring:
 #      settings:
 #        trace: false
 #        web-allow-others: false
+  jta.bitronix:
+    properties:
+      server-id: btx-server-0
+      log-part1-filename: transaction-logs/part1.btm
+      log-part2-filename: transaction-logs/part2.btm
+#    connectionfactory:
+#      class-name: org.apache.activemq.ActiveMQXAConnectionFactory
+#      allow-local-transactions: true
+#      unique-name: jmsConnectionFactory
+#      driver-properties:
+#        brokerURL: vm://localhost?broker.persistent=false&broker.useJmx=false
+#    datasource:
+#      unique-name: h2ds
+#      class-name: org.h2.jdbcx.JdbcDataSource
+#      allow-local-transactions: true
+#      max-pool-size: 5
+#      driver-properties:
+#        url: jdbc:h2:file:./db/camelspringdemodb
+#        user: root
+#        password: root
 
 logging.level:
   root: debug
   org.apache: info
-  org.springframework: error
+  org.springframework: info
   org.example.camelspringdemo: debug
-
+  bitronix.tm: debug
+#  bitronix.tm: info

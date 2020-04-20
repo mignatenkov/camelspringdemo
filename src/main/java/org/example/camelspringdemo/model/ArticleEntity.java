@@ -4,6 +4,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Data;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,28 +15,26 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "demo_cd")
-public class CdEntity {
+@Table(name = "article")
+public class ArticleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "demo_catalog_id")
-    private CatalogEntity catalog;
+    @JoinColumn(name = "articles_id")
+    private ArticlesEntity articles;
 
-    @JacksonXmlProperty(localName = "TITLE")
-    private String title;
-    @JacksonXmlProperty(localName = "ARTIST")
-    private String artist;
-    @JacksonXmlProperty(localName = "COUNTRY")
-    private String country;
-    @JacksonXmlProperty(localName = "COMPANY")
-    private String company;
-    @JacksonXmlProperty(localName = "PRICE")
-    private String price;
-    @JacksonXmlProperty(localName = "YEAR")
-    private String year;
+    @JacksonXmlProperty(localName = "id_art")
+    private Long idArt;
+    @JacksonXmlProperty(localName = "name")
+    private String name;
+    @JacksonXmlProperty(localName = "code")
+    private String code;
+    @JacksonXmlProperty(localName = "username")
+    private String username;
+    @JacksonXmlProperty(localName = "guid")
+    private String guid;
 
 }
