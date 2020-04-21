@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<CATALOG>
-    <CD>
-        <TITLE>Empire Burlesque</TITLE>
-        <ARTIST>Bob Dylan</ARTIST>
-        <COUNTRY>USA</COUNTRY>
-        <COMPANY>Columbia</COMPANY>
-        <PRICE>10.90</PRICE>
-        <YEAR>1985</YEAR>
-    </CD>
-</CATALOG>
+<articles>
+    <article>
+        <id_art>1</id_art>
+        <name>qwe</name>
+        <code>123456</code>
+        <username>asd</username>
+        <guid>1q2w3e</guid>
+    </article>
+    <article>
+        <id_art>2</id_art>
+        <name>wer</name>
+        <code>234567</code>
+        <username>sdf</username>
+        <guid>1q2w3e</guid>
+    </article>
+</articles>
